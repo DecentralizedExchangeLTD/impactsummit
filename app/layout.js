@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Questrial } from "next/font/google";
 import "./globals.css";
 
@@ -114,6 +115,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* Google analytics tag (gtag.js) */}
+      <Script
+        strategy="afterInteractive"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-E73X2YZ8HJ"
+      ></Script>
+      <Script strategy="afterInteractive" id="google-analytics">
+        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
+        gtag('config', 'G-E73X2YZ8HJ');`}
+      </Script>
       <body className={questrial.className}>{children}</body>
     </html>
   );

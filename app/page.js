@@ -23,10 +23,16 @@ export default function Home() {
   return (
     <main>
       <div className="sm:mt-28 mt-14">
-        <nav className="fixed hidden sm:block top-0 bg-white w-full drop-shadow-md">
-          <h1 className="absolute left-10 top-10 font-bold text-xl">
-            Impact Summit
-          </h1>
+        <nav className="fixed hidden sm:flex flex-row items-center justify-between top-0 bg-white w-full drop-shadow-md">
+          <div className="w-36 pl-14">
+            <Image
+              src="/mainlogo.png"
+              alt="impact summit logo."
+              width={1000}
+              height={1000}
+              className="object-contain"
+            />
+          </div>
           <ul className={` flex items-center justify-center h-28 gap-5`}>
             {menuItems.map((item, index) => (
               <li
@@ -38,11 +44,18 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <span></span>
         </nav>
-        <nav className="fixed sm:hidden block top-0 bg-white w-full h-16 drop-shadow-md">
-          <h1 className="absolute left-10 top-5 font-bold text-xl">
-            Impact Summit
-          </h1>
+        <nav className="fixed sm:hidden flex flex-row items-center top-0 bg-white w-full h-16 drop-shadow-md">
+          <div className="w-1/4 pl-4">
+            <Image
+              src="/mainlogo.png"
+              alt="impact summit logo."
+              width={1000}
+              height={1000}
+              className="object-contain"
+            />
+          </div>
           {/* <h1 className="absolute right-10 top-5">⁝</h1> */}
           {showNav && (
             <ul className="flex items-center justify-center gap-10">
@@ -178,13 +191,17 @@ export default function Home() {
             <br />
             <div className="w-full flex flex-col gap-2">
               <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hack Focus
+                Impact Hackathon Focus
               </h1>
               <p className={` text-xl sm:text-2xl text-left`}>
-                Develop a cutting-edge crypto payment application on the Public
-                Goods Network <b>(PGN)</b> that leverages the power of{" "}
-                <b>EIP-4337</b> to offer users a seamless and intuitive
-                experience for making USD payments on PGN.
+                The goal of this hackathon is to develop a frontend UI or PWA
+                for EIP-4337 on the PGN network that would allow users to make
+                payments with fiat and convert to a stable coin on PGN easily
+                and conveniently. Your main focus for this hackathon is the
+                frontend UI or PWA. The application should be user-friendly and
+                should not require users to have any knowledge of blockchain
+                technology. The backend of your project should be able to
+                interact with the given PGN contract address.
               </p>
             </div>
             <br />
@@ -192,13 +209,75 @@ export default function Home() {
             <br />
             <div className="w-full flex flex-col gap-2">
               <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hack Details
+                Impact Hackathon Schedule
               </h1>
               <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
                 <li>Start Date: 1st November, 2023</li>
                 <li>Duration: One Month</li>
                 <li>Submission deadline: 1st December, 2023</li>
                 <li>Judging and Results: 9th December, 2023</li>
+              </ul>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div className="w-full flex flex-col gap-2">
+              <h1 className={` text-xl sm:text-2xl font-bold`}>
+                Impact Hackathon Requirements
+              </h1>
+              <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                <li>
+                  It must be able to connect to the PGN network and interact
+                  with EIP-4337 payment facilitators(Paymaster).
+                </li>
+                <li>
+                  It must allow users to make payments in fiat to other users on
+                  the PGN network.
+                </li>
+                <li>It must not require users to manage a private key</li>
+                <li>It must be user-friendly and easy to use.</li>
+                <li>It may not require users to buy gas tokens. (Bonus)</li>
+              </ul>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div className="w-full flex flex-col gap-2">
+              <h1 className={` text-xl sm:text-2xl font-bold`}>
+                Impact Hackathon Evaluation Criteria
+              </h1>
+              <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                <li>
+                  <b>Functionality:</b> Does the application meet all of the
+                  requirements listed above?
+                </li>
+                <li>
+                  <b>Usability:</b> Is the application user-friendly and easy to
+                  use?
+                </li>
+                <li>
+                  <b>Creativity:</b> Does the application offer any innovative
+                  features or functionality?
+                </li>
+              </ul>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div className="w-full flex flex-col gap-2">
+              <h1 className={` text-xl sm:text-2xl font-bold`}>
+                Impact Hackathon Prizes
+              </h1>
+              <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                <li>
+                  <b>1st place:</b> $250
+                </li>
+                <li>
+                  <b>2nd place:</b> $150
+                </li>
+                <li>
+                  <b>3rd place:</b> $100
+                </li>
               </ul>
             </div>
             <br />
