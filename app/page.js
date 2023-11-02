@@ -24,7 +24,7 @@ export default function Home() {
     <main>
       <div className="sm:mt-28 mt-14">
         <nav className="fixed hidden sm:flex flex-row items-center justify-between top-0 bg-white w-full drop-shadow-md">
-          <div className="w-36 pl-14">
+          <div className="w-36 pl-14 md:pl-8">
             <Image
               src="/mainlogo.png"
               alt="impact summit logo."
@@ -33,10 +33,12 @@ export default function Home() {
               className="object-contain"
             />
           </div>
-          <ul className={` flex items-center justify-center h-28 gap-5`}>
+          <ul
+            className={` flex items-center justify-center h-28 md:h-16 lg:h-28 md:gap-2 lg:gap-5`}
+          >
             {menuItems.map((item, index) => (
               <li
-                className="text-xl capitalize border-2 border-b-black border-white hover:border-black py-1 px-4 hover:border-2 cursor-pointer"
+                className="text-base md:text-base lg:text-xl capitalize border-2 border-b-black border-white hover:border-black py-1 md:px-2 lg:px-4 hover:border-2 cursor-pointer"
                 key={index}
                 onClick={(e) => scrollToSection(e, item.id)}
               >
@@ -166,9 +168,9 @@ export default function Home() {
                 className={` text-left sm:text-center text-xl mt-5 sm:text-2xl`}
               >
                 Are you ready to make a lasting impact in your community
-                leveraging Web3? We invite you to join the <b>Impact Hack</b>{" "}
-                hackathon, the ultimate hackathon event that will challenge your
-                skills and creativity.
+                leveraging Web3? We invite you to join the{" "}
+                <b>Impact Hackathon</b>, the ultimate hackathon event that will
+                challenge your skills and creativity.
               </p>
               <h1 className={` font-bold text-left`}>
                 1st Nov, 2023 - 1st Dec, 2023
