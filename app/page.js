@@ -2,10 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FloatButton, Button, message, Steps, theme } from "antd";
 import "./globals.css";
 
 export default function Home() {
-  const [showNav, setShowNav] = React.useState();
+  const [showNav, setShowNav] = React.useState(false);
   const menuItems = [
     { name: "Hackathon", id: "hackathon" },
     { name: "Schedule", id: "schedule" },
@@ -15,7 +16,318 @@ export default function Home() {
     { name: "Contact Us", id: "contact" },
   ];
 
+  const speakers = [
+    {
+      name: "Jimi Cohen",
+      title: "Founder - Treegens DAO",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/jimicohen.jpeg",
+    },
+    {
+      name: "Annaelechukwu",
+      title: "Cofounder - Blockchain UNN",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/annaelechukwu.jpeg",
+    },
+    {
+      name: "UncleSam ",
+      title: "Founder - Web3 Brand Therapist",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/unclesam.jpeg",
+    },
+    {
+      name: "Christwin",
+      title: "Founder - SwitchElectric",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/christwinifeanyi.jpeg",
+    },
+    {
+      name: "Amio Anthony",
+      title: "Founder - Blockchain Club FCET UMUNZE",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/amio.jpeg",
+    },
+    {
+      name: "Chidi Okeke",
+      title: "Cofounder - HelperSocial",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/chidiokeke.jpeg",
+    },
+    {
+      name: "Eric Anan",
+      title: "Founder & CEO - Aya",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/ericanan.jpeg",
+    },
+    {
+      name: "Izzy(decentralizedceo)",
+      title: "GreenPill Nigeria Chapter Steward. Founder of TAS",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/izzy.jpeg",
+    },
+  ];
+
+  const schedule = [
+    {
+      title: "Registration Open",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Registration Open</h1>
+          <p>08:00 AM</p>
+          <p>Registration process</p>
+        </div>
+      ),
+      time: "08:00 AM",
+    },
+    {
+      title: "Opening Statements",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Opening Statements</h1>
+          <p>09:00 AM - 09:15 AM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "09:00 AM - 09:15 AM",
+    },
+    {
+      title: "What are Public Goods and how does it help us?",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            What are Public Goods and how does it help us?
+          </h1>
+          <p>09:15 AM - 09:30 AM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "09:15 AM - 09:30 AM",
+    },
+    {
+      title: "Using your niche as a public good",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Using your niche as a public good
+          </h1>
+          <p>9:30 AM - 10:00 AM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "9:30 AM - 10:00 AM",
+    },
+    {
+      title: "Morning Break",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Morning Break</h1>
+          <p>10:00 AM - 10:15 AM</p>
+          <p>free time</p>
+        </div>
+      ),
+      time: "10:00 AM - 10:15 AM",
+    },
+    {
+      title: "Environmental Sustainability through Regenerative Finance",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Environmental Sustainability through Regenerative Finance
+          </h1>
+          <p>10:15 AM - 11:00 AM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "10:15 AM - 11:00 AM",
+    },
+    {
+      title: "Impactful Initiatives and why they matter",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Impactful Initiatives and why they matter
+          </h1>
+          <p>11:00 AM - 11:30 AM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "11:00 AM - 11:30 AM",
+    },
+    {
+      title: "What is Quadratic Funding and how does it help?",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            What is Quadratic Funding and how does it help?
+          </h1>
+          <p>11:30 AM - 12:00 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "11:30 AM - 12:00 PM",
+    },
+    {
+      title: "Lunch Break",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Lunch Break</h1>
+          <p>12:00 PM - 12:45 PM</p>
+          <p>food time</p>
+        </div>
+      ),
+      time: "12:00 PM - 12:45 PM",
+    },
+    {
+      title: "Proof of impact. How is it measured? ",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Proof of impact. How is it measured?{" "}
+          </h1>
+          <p>1:00 PM - 1:30 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "1:00 PM - 1:30 PM",
+    },
+    {
+      title: "Importance of Web3 education as a Public Good",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Importance of Web3 education as a Public Good
+          </h1>
+          <p>2:00 PM - 2:15 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "2:00 PM - 2:15 PM",
+    },
+    {
+      title: "How to unlock unstoppable motivation & the Future of ReFi",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            How to unlock unstoppable motivation & the Future of ReFi
+          </h1>
+          <p>2:15 PM - 2:45 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "2:15 PM - 2:45 PM",
+    },
+    {
+      title: "Afternoon break",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Afternoon break</h1>
+          <p>3:00 PM - 3:15 PM</p>
+          <p>food time</p>
+        </div>
+      ),
+      time: "3:00 PM - 3:15 PM",
+    },
+    {
+      title: "Network Goods from a Devs view",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Network Goods from a Dev&apos;s view
+          </h1>
+          <p>3:15 PM - 3:45 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "3:15 PM - 3:45 PM",
+    },
+    {
+      title: "Hackathon showcase and results",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Hackathon showcase and results</h1>
+          <p>4:00 PM - 4:15 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "4:00 PM - 4:15 PM",
+    },
+    {
+      title:
+        "Future of Public Goods with Quadratic Funding(The GitCoin Initiative)",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">
+            Future of Public Goods with Quadratic Funding(The GitCoin
+            Initiative)
+          </h1>
+          <p>4:15 PM - 4:45 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "4:15 PM - 4:45 PM",
+    },
+    {
+      title: "Closing Remarks and Thank You",
+      content: (
+        <div className="flex flex-col h-[260px] w-full items-center justify-center">
+          <h1 className="text-xl font-bold">Closing Remarks and Thank You</h1>
+          <p>5:00 PM</p>
+          <p>speakers</p>
+        </div>
+      ),
+      time: "5:00 PM",
+    },
+  ];
+
+  const { token } = theme.useToken();
+  const [current, setCurrent] = React.useState(0);
+  const next = () => {
+    setCurrent(current + 1);
+  };
+  const prev = () => {
+    setCurrent(current - 1);
+  };
+  const items = schedule.map((item, index) => ({
+    key: index,
+    title: item.title,
+    description: item.time,
+  }));
+  const contentStyle = {
+    textAlign: "center",
+    color: token.colorTextTertiary,
+    backgroundColor: token.colorFillAlter,
+    borderRadius: token.borderRadiusLG,
+    border: `1px solid ${token.colorBorder}`,
+    marginTop: 16,
+    width: "100%",
+  };
+
   function scrollToSection(e, id) {
+    setShowNav(false);
     e.preventDefault();
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   }
@@ -58,12 +370,17 @@ export default function Home() {
               className="object-contain"
             />
           </div>
-          {/* <h1 className="absolute right-10 top-5">⁝</h1> */}
+          <h1
+            onClick={() => setShowNav(!showNav)}
+            className="absolute right-5 top-5 font-bold text-3xl px-2 scale-x-150"
+          >
+            ≡
+          </h1>
           {showNav && (
-            <ul className="flex items-center justify-center gap-10">
+            <ul className="p-8 absolute w-full top-16 bg-white flex flex-col items-start justify-start gap-5">
               {menuItems.map((item, index) => (
                 <li
-                  className="text-xl capitalize border-2 border-b-black border-white hover:border-black py-1 px-4 hover:border-2 cursor-pointer"
+                  className="capitalize w-full border-b cursor-pointer"
                   key={index}
                   onClick={(e) => scrollToSection(e, item.id)}
                 >
@@ -98,7 +415,10 @@ export default function Home() {
                 Highlighting the impactful activities and organizations in the
                 region
               </p>
-              <div className="w-full flex flex-col sm:flex-row gap-3 sm:gap-10 sm:items-center sm:justify-center">
+              <div
+                id="tickets"
+                className="w-full flex flex-col sm:flex-row gap-3 sm:gap-10 sm:items-center sm:justify-center"
+              >
                 <span
                   className={` text-left text-xl sm:text-2xl flex items-center`}
                 >
@@ -205,6 +525,7 @@ export default function Home() {
                 technology. The backend of your project should be able to
                 interact with the given PGN contract address.
               </p>
+              <FloatButton.BackTop />
             </div>
             <br />
             <hr />
@@ -291,72 +612,66 @@ export default function Home() {
                 <br />
                 speakers
               </h1>
-              <ul className={` list-disc text-xl sm:text-2xl`}>
-                <li className="flex h-14 w-full mb-3 items-center justify-start gap-2">
-                  <div className="w-1/5 sm:w-1/12 h-full">
-                    <div className="w-14 h-14 rounded-full bg-slate-200">
-                      <Image
-                        src="/jimicohen.jpeg"
-                        alt="Jimi Cohen, speaker at impact summit"
-                        width={1000}
-                        height={1000}
-                        className="rounded-full object-cover w-full h-full"
-                      />
+              <div
+                className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-row flex-wrap gap-4 sm:gap-8`}
+              >
+                {speakers.map((speaker, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="flex h-32 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
                     </div>
-                  </div>
-                  <span className="w-5/6 text-lg">
-                    Jimi Cohen (Founder of Treegens DAO)
-                  </span>
-                </li>
-                <li className="flex h-14 w-full mb-3 items-center justify-start gap-2">
-                  <div className="w-1/5 sm:w-1/12 h-full">
-                    <div className="w-14 h-14 rounded-full bg-slate-200">
-                      <Image
-                        src="/annaelechukwu.jpeg"
-                        alt="Annaelechukwu, speaker at impact summit"
-                        width={1000}
-                        height={1000}
-                        className="rounded-full object-cover w-full h-full"
-                      />
-                    </div>
-                  </div>
-                  <span className="w-5/6 text-lg">
-                    Annaelechukwu (Cofounder of Blockchain UNN)
-                  </span>
-                </li>
-                <li className="flex h-14 w-full mb-3 items-center justify-start gap-2">
-                  <div className="w-1/5 sm:w-1/12 h-full">
-                    <div className="w-14 h-14 rounded-full bg-slate-200">
-                      <Image
-                        src="/unclesam.jpeg"
-                        alt="Uncle Sam, speaker at impact summit"
-                        width={1000}
-                        height={1000}
-                        className="rounded-full object-cover w-full h-full"
-                      />
-                    </div>
-                  </div>
-                  <span className="w-5/6 text-lg">
-                    Uncle Sam (Web3 influencer)
-                  </span>
-                </li>
-                <li className="flex h-14 w-full mb-3 items-center justify-start gap-2">
-                  <div className="w-1/5 sm:w-1/12 h-full">
-                    <div className="w-14 h-14 rounded-full bg-slate-200">
-                      <Image
-                        src="/christwinifeanyi.jpeg"
-                        alt="Christwin Christwin, speaker at impact summit"
-                        width={1000}
-                        height={1000}
-                        className="rounded-full object-cover w-full h-full"
-                      />
-                    </div>
-                  </div>
-                  <span className="w-5/6 text-lg">
-                    Christwin Christwin (Founder of SwitchElectric)
-                  </span>
-                </li>
-              </ul>
+                  );
+                })}
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div id="schedule" className="w-full flex flex-col gap-2">
+              <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
+                Impact Summit
+                <br />
+                schedule
+              </h1>
+              <div
+                className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-col`}
+              >
+                {/* <Steps current={current} items={items} /> */}
+                <div style={contentStyle}>{schedule[current].content}</div>
+                <div className="w-full flex items-center justify-center my-5 gap-5">
+                  {current < schedule.length - 1 && (
+                    <button
+                      className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                      type="default"
+                      onClick={() => next()}
+                    >
+                      Next
+                    </button>
+                  )}
+                  {current > 0 && (
+                    <button
+                      className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                      onClick={() => prev()}
+                    >
+                      Previous
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
             <br />
             <hr />
