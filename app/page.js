@@ -448,7 +448,7 @@ export default function Home() {
             <div className="w-full lg:w-2/3 flex flex-col gap-2">
               <h1 className={` text-xl sm:text-2xl font-bold`}>Protocols:</h1>
               <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
-                <li>Etherium</li>
+                <li>Ethereum</li>
                 <li>Public Good Network</li>
                 <li>Optimism</li>
                 <li>Allo</li>
