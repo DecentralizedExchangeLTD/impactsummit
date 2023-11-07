@@ -89,6 +89,15 @@ export default function Home() {
       ],
       src: "/izzy.jpeg",
     },
+    {
+      name: "Crossvic",
+      title: "Co-founder - Pidgin Parlour",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/crossvic.jpeg",
+    },
   ];
 
   const schedule = [
@@ -305,17 +314,22 @@ export default function Home() {
 
   const { token } = theme.useToken();
   const [current, setCurrent] = React.useState(0);
+  const [showImpact, setShowImpact] = React.useState(false);
+
   const next = () => {
     setCurrent(current + 1);
   };
+
   const prev = () => {
     setCurrent(current - 1);
   };
+
   const items = schedule.map((item, index) => ({
     key: index,
     title: item.title,
     description: item.time,
   }));
+
   const contentStyle = {
     textAlign: "center",
     color: token.colorTextTertiary,
@@ -327,9 +341,16 @@ export default function Home() {
   };
 
   function scrollToSection(e, id) {
-    setShowNav(false);
-    e.preventDefault();
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    if (id === "impact") {
+      e.preventDefault();
+      setShowNav(false);
+      setShowImpact(true);
+    } else {
+      setShowNav(false);
+      setShowImpact(false);
+      e.preventDefault();
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   return (
@@ -390,324 +411,482 @@ export default function Home() {
             </ul>
           )}
         </nav>
-        <div className="flex min-h-screen flex-col items-center justify-start p-8 sm:p-20">
-          <div className="max-w-7xl w-full items-center justify-center">
-            <div className="w-full flex flex-col gap-2">
-              <h1
-                className={` text-3xl sm:text-6xl mb-5 font-bold text-center`}
-              >
-                <span>Impact Summit</span>
-                <br />
-                <span className="text-green-500">Nigeria</span> 2023.
-              </h1>
-              <div className="w-full aspect-video object-cover h-60 sm:h-[40rem]">
-                <Image
-                  src="/mountsummit.jpeg"
-                  alt="impact summit 2023"
-                  width={1000}
-                  height={1000}
-                  className="rounded-2xl object-cover w-full h-full"
-                />
-              </div>
-              <p
-                className={` text-left text-xl sm:text-2xl sm:mt-5 sm:text-center`}
-              >
-                Highlighting the impactful activities and organizations in the
-                region
-              </p>
-              <div
-                id="tickets"
-                className="w-full flex flex-col sm:flex-row gap-3 sm:gap-10 sm:items-center sm:justify-center"
-              >
-                <span
-                  className={` text-left text-xl sm:text-2xl flex items-center`}
-                >
-                  <div className="border border-black rounded-md bg-slate-100 mr-2">
-                    <Image
-                      src="/locationicon.svg"
-                      alt="impact summit 2023 venue is Sylvia Hotel, Enugu."
-                      width={10}
-                      height={10}
-                      className="rounded-2xl object-cover w-8 h-8"
-                    />
-                  </div>{" "}
-                  <p>Sylvia Hotel, Enugu.</p>
-                </span>
-                <span
-                  className={` text-left text-xl sm:text-2xl flex items-center`}
-                >
-                  <div className="border border-black rounded-md bg-slate-100 mr-2">
-                    <Image
-                      src="/calendaricon.svg"
-                      alt="impact summit 2023 calendar date is 9th Dec, 2023."
-                      width={10}
-                      height={10}
-                      className="rounded-2xl object-cover w-8 h-8"
-                    />
-                  </div>{" "}
-                  <p>9th Dec, 2023.</p>
-                </span>
-              </div>
-              <div className="flex w-full items-center justify-center gap-2 mt-2">
-                <Link
-                  href={"https://app.1w3.io/Links/ISN2023"}
-                  target={"_blank"}
-                  className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
-                >
-                  Get tickets
-                </Link>
-                <Link
-                  href={
-                    "mailto:greenpillnigeria@gmail.com?subject=Impact%20Summit%20Question&body=Hello%20"
-                  }
-                  className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
-                >
-                  Email us
-                </Link>
-              </div>
-            </div>
-            <br />
-            <hr />
-            <br />
+        {showImpact === true ? (
+          <div
+            id="impact"
+            className="flex min-h-screen flex-col items-center justify-start p-8 sm:p-20"
+          >
             <div
               id="hackathon"
               className="w-full flex flex-col items-center justify-center gap-2"
             >
               <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
-                Impact Hack
+                Impact Africa
               </h1>
 
               <Image
-                src="/splash3.jpg"
-                alt=""
+                src="/impaf.png"
+                alt="impactafrica"
                 width={1000}
                 height={1000}
-                className="rounded-2xl"
+                className="rounded-2xl bg-black w-full lg:w-1/2 aspect-video object-contain"
               />
               <p
-                className={` text-left sm:text-center text-xl mt-5 sm:text-2xl`}
+                className={`w-full lg:w-2/3 text-left sm:text-center text-xl mt-5 sm:text-2xl`}
               >
-                Are you ready to make a lasting impact in your community
-                leveraging Web3? We invite you to join the{" "}
-                <b>Impact Hackathon</b>, the ultimate hackathon event that will
-                challenge your skills and creativity.
+                The following Protocols, DAOs, Projects and Organizations have
+                been bringing value, showing impact and assisting the citizens
+                in the African region. Through their Public Good hard work,
+                mission and dedication, the continent has been onboarded to the
+                global Web3 space. As a result, the continent continues to adopt
+                Web3 for a better way of life.
               </p>
-              <h1 className={` font-bold text-left`}>
-                1st Nov, 2023 - 1st Dec, 2023
-              </h1>
             </div>
             <br />
-            <hr />
+            <hr className="w-full" />
             <br />
-            <div className="w-full flex items-center justify-center">
-              <Link
-                href={"https://forms.gle/qiAAYRENsZ2Nibk8A"}
-                target={"_blank"}
-                className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
-              >
-                Register Now
-              </Link>
-            </div>
-            <br />
-            <hr />
-            <br />
-            <div className="w-full flex flex-col gap-2">
-              <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hackathon Focus
-              </h1>
-              <p className={` text-xl sm:text-2xl text-left`}>
-                The goal of this hackathon is to develop a frontend UI or PWA
-                for EIP-4337 on the PGN network that would allow users to make
-                payments with fiat and convert to a stable coin on PGN easily
-                and conveniently. Your main focus for this hackathon is the
-                frontend UI or PWA. The application should be user-friendly and
-                should not require users to have any knowledge of blockchain
-                technology. The backend of your project should be able to
-                interact with the given PGN contract address.
-              </p>
-              <FloatButton.BackTop />
-            </div>
-            <br />
-            <hr />
-            <br />
-            <div className="w-full flex flex-col gap-2">
-              <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hackathon Schedule
-              </h1>
+            <div className="w-full lg:w-2/3 flex flex-col gap-2">
+              <h1 className={` text-xl sm:text-2xl font-bold`}>Protocols:</h1>
               <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
-                <li>Start Date: 1st November, 2023</li>
-                <li>Duration: One Month</li>
-                <li>Submission deadline: 1st December, 2023</li>
-                <li>Judging and Results: 9th December, 2023</li>
+                <li>Etherium</li>
+                <li>Public Good Network</li>
+                <li>Optimism</li>
+                <li>Allo</li>
+                <li>Celo</li>
               </ul>
             </div>
             <br />
-            <hr />
+            <hr className="w-full" />
             <br />
-            <div className="w-full flex flex-col gap-2">
-              <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hackathon Requirements
-              </h1>
+            <div className="w-full lg:w-2/3 flex flex-col gap-2">
+              <h1 className={` text-xl sm:text-2xl font-bold`}>DAOs:</h1>
               <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
-                <li>
-                  It must be able to connect to the PGN network and interact
-                  with EIP-4337 payment facilitators(Paymaster).
-                </li>
-                <li>
-                  It must allow users to make payments in fiat to other users on
-                  the PGN network.
-                </li>
-                <li>It must not require users to manage a private key</li>
-                <li>It must be user-friendly and easy to use.</li>
-                <li>It may not require users to buy gas tokens. (Bonus)</li>
+                <li>GitCoin</li>
+                <li>GreenPill</li>
+                <li>SolarPunk DAO</li>
+                <li>Public Good Africa</li>
               </ul>
             </div>
             <br />
-            <hr />
+            <hr className="w-full" />
             <br />
-            <div className="w-full flex flex-col gap-2">
+            <div className="w-full lg:w-2/3 flex flex-col gap-2">
               <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hackathon Evaluation Criteria
+                Projects/Organizations:
               </h1>
               <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
-                <li>
-                  <b>Functionality:</b> Does the application meet all of the
-                  requirements listed above?
-                </li>
-                <li>
-                  <b>Usability:</b> Is the application user-friendly and easy to
-                  use?
-                </li>
-                <li>
-                  <b>Creativity:</b> Does the application offer any innovative
-                  features or functionality?
-                </li>
+                <li>Glo Dollar</li>
+                <li>Good Dollar</li>
+                <li>Hypercerts</li>
+                <li>Switch Electric</li>
+                <li>TAS</li>
+                <li>Decentralized Exchange LTD</li>
+                <li>Kokonut Network</li>
+                <li>Metering Protocol</li>
+                <li>BlockchainUNN</li>
+                <li>Blockchain Club FCET</li>
+                <li>{`B<>rder/ess2.0`}</li>
+                <li>HelperSocial</li>
+                <li>Aya</li>
               </ul>
             </div>
             <br />
-            <hr />
+            <hr className="w-full" />
             <br />
-            <div className="w-full flex flex-col gap-2">
-              <h1 className={` text-xl sm:text-2xl font-bold`}>
-                Impact Hackathon Prizes
-              </h1>
-              <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
-                <li>
-                  <b>1st place:</b> $250
-                </li>
-                <li>
-                  <b>2nd place:</b> $150
-                </li>
-                <li>
-                  <b>3rd place:</b> $100
-                </li>
-              </ul>
-            </div>
-            <br />
-            <hr />
-            <br />
-            <div id="speakers" className="w-full flex flex-col gap-2">
-              <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
-                Impact Summit
-                <br />
-                speakers
-              </h1>
+            <div>
               <div
-                className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-row flex-wrap gap-4 sm:gap-8`}
+                id="contact"
+                className="w-full h-40 bg-black left-0 absolute"
               >
-                {speakers.map((speaker, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="flex h-32 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                <div className="w-full h-full text-white flex flex-col items-center justify-center">
+                  <div className="flex gap-5 mb-4">
+                    <Link
+                      href={"https://t.me/+tzbcHRsTb802Yjc0"}
+                      className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
                     >
-                      <div className="w-14 h-14 rounded-full bg-slate-200">
-                        <Image
-                          src={speaker.src}
-                          alt={`${speaker.name}, speaker at impact summit 2023`}
-                          width={1000}
-                          height={1000}
-                          className="rounded-full object-cover w-full h-full"
-                        />
-                      </div>
-                      <span className={`text-lg w-3/4`}>
-                        {`${speaker.name} (${speaker.title})`}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <br />
-            <hr />
-            <br />
-            <div id="schedule" className="w-full flex flex-col gap-2">
-              <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
-                Impact Summit
-                <br />
-                schedule
-              </h1>
-              <div
-                className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-col`}
-              >
-                {/* <Steps current={current} items={items} /> */}
-                <div style={contentStyle}>{schedule[current].content}</div>
-                <div className="w-full flex items-center justify-center my-5 gap-5">
-                  {current < schedule.length - 1 && (
-                    <button
-                      className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
-                      type="default"
-                      onClick={() => next()}
+                      <Image
+                        src="/telegram.png"
+                        alt="telegram"
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                    <Link
+                      href={"https://chat.whatsapp.com/Bz25P7lc7la1WVdzq090Tj"}
+                      className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
                     >
-                      Next
-                    </button>
-                  )}
-                  {current > 0 && (
-                    <button
-                      className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
-                      onClick={() => prev()}
+                      <Image
+                        src="/whatsapp.png"
+                        alt="whatsapp"
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                    <Link
+                      href={"https://twitter.com/Impactfulsummit"}
+                      className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
                     >
-                      Previous
-                    </button>
-                  )}
+                      <Image
+                        src="/twitter.png"
+                        alt="twitter"
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                  </div>
+                  <h1>Impact Summit</h1>
+                  <h1>2023</h1>
                 </div>
-              </div>
-            </div>
-            <br />
-            <hr />
-            <br />
-            <div id="contact" className="w-full h-40 bg-black left-0 absolute">
-              <div className="w-full h-full text-white flex flex-col items-center justify-center">
-                <div className="flex gap-5 mb-4">
-                  <Link
-                    href={"https://t.me/+tzbcHRsTb802Yjc0"}
-                    className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
-                  >
-                    <Image
-                      src="/telegram.png"
-                      alt="telegram"
-                      width={25}
-                      height={25}
-                    />
-                  </Link>
-                  <Link
-                    href={"https://chat.whatsapp.com/Bz25P7lc7la1WVdzq090Tj"}
-                    className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
-                  >
-                    <Image
-                      src="/whatsapp.png"
-                      alt="whatsapp"
-                      width={25}
-                      height={25}
-                    />
-                  </Link>
-                </div>
-                <h1>Impact Summit</h1>
-                <h1>2023</h1>
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="flex min-h-screen flex-col items-center justify-start p-8 sm:p-20">
+            <div className="max-w-7xl w-full items-center justify-center">
+              <div className="w-full flex flex-col gap-2">
+                <h1
+                  className={` text-3xl sm:text-6xl mb-5 font-bold text-center`}
+                >
+                  <span>Impact Summit</span>
+                  <br />
+                  <span className="text-green-500">Nigeria</span> 2023.
+                </h1>
+                <div className="w-full aspect-video object-cover h-60 sm:h-[40rem]">
+                  <Image
+                    src="/mountsummit.jpeg"
+                    alt="impact summit 2023"
+                    width={1000}
+                    height={1000}
+                    className="rounded-2xl object-cover w-full h-full"
+                  />
+                </div>
+                <p
+                  className={` text-left text-xl sm:text-2xl sm:mt-5 sm:text-center`}
+                >
+                  Highlighting the impactful activities and organizations in the
+                  region
+                </p>
+                <div
+                  id="tickets"
+                  className="w-full flex flex-col sm:flex-row gap-3 sm:gap-10 sm:items-center sm:justify-center"
+                >
+                  <span
+                    className={` text-left text-xl sm:text-2xl flex items-center`}
+                  >
+                    <div className="border border-black rounded-md bg-slate-100 mr-2">
+                      <Image
+                        src="/locationicon.svg"
+                        alt="impact summit 2023 venue is Sylvia Hotel, Enugu."
+                        width={10}
+                        height={10}
+                        className="rounded-2xl object-cover w-8 h-8"
+                      />
+                    </div>{" "}
+                    <p>Sylvia Hotel, Enugu.</p>
+                  </span>
+                  <span
+                    className={` text-left text-xl sm:text-2xl flex items-center`}
+                  >
+                    <div className="border border-black rounded-md bg-slate-100 mr-2">
+                      <Image
+                        src="/calendaricon.svg"
+                        alt="impact summit 2023 calendar date is 9th Dec, 2023."
+                        width={10}
+                        height={10}
+                        className="rounded-2xl object-cover w-8 h-8"
+                      />
+                    </div>{" "}
+                    <p>9th Dec, 2023.</p>
+                  </span>
+                </div>
+                <div className="flex w-full items-center justify-center gap-2 mt-2">
+                  <Link
+                    href={"https://app.1w3.io/Links/ISN2023"}
+                    target={"_blank"}
+                    className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                  >
+                    Get tickets
+                  </Link>
+                  <Link
+                    href={
+                      "mailto:greenpillnigeria@gmail.com?subject=Impact%20Summit%20Question&body=Hello%20"
+                    }
+                    className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                  >
+                    Email us
+                  </Link>
+                </div>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div
+                id="hackathon"
+                className="w-full flex flex-col items-center justify-center gap-2"
+              >
+                <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
+                  Impact Hack
+                </h1>
+
+                <Image
+                  src="/splash3.jpg"
+                  alt="impact hackathon web3"
+                  width={1000}
+                  height={1000}
+                  className="rounded-2xl"
+                />
+                <p
+                  className={` text-left sm:text-center text-xl mt-5 sm:text-2xl`}
+                >
+                  Are you ready to make a lasting impact in your community
+                  leveraging Web3? We invite you to join the{" "}
+                  <b>Impact Hackathon</b>, the ultimate hackathon event that
+                  will challenge your skills and creativity.
+                </p>
+                <h1 className={` font-bold text-left`}>
+                  1st Nov, 2023 - 1st Dec, 2023
+                </h1>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex items-center justify-center">
+                <Link
+                  href={"https://forms.gle/qiAAYRENsZ2Nibk8A"}
+                  target={"_blank"}
+                  className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                >
+                  Register Now
+                </Link>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex flex-col gap-2">
+                <h1 className={` text-xl sm:text-2xl font-bold`}>
+                  Impact Hackathon Focus
+                </h1>
+                <p className={` text-xl sm:text-2xl text-left`}>
+                  The goal of this hackathon is to develop a frontend UI or PWA
+                  for EIP-4337 on the PGN network that would allow users to make
+                  payments with fiat and convert to a stable coin on PGN easily
+                  and conveniently. Your main focus for this hackathon is the
+                  frontend UI or PWA. The application should be user-friendly
+                  and should not require users to have any knowledge of
+                  blockchain technology. The backend of your project should be
+                  able to interact with the given PGN contract address.
+                  <br /> For more information on PGN please visit the{" "}
+                  <span>
+                    <Link
+                      href={
+                        "https://docs.publicgoods.network/building-with-pgn"
+                      }
+                      target={"_blank"}
+                      className="underline text-amber-500 font-bold"
+                    >
+                      public goods documentation
+                    </Link>
+                    .
+                  </span>
+                </p>
+                <FloatButton.BackTop />
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex flex-col gap-2">
+                <h1 className={` text-xl sm:text-2xl font-bold`}>
+                  Impact Hackathon Schedule
+                </h1>
+                <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                  <li>Start Date: 1st November, 2023</li>
+                  <li>Duration: One Month</li>
+                  <li>Submission deadline: 1st December, 2023</li>
+                  <li>Judging and Results: 9th December, 2023</li>
+                </ul>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex flex-col gap-2">
+                <h1 className={` text-xl sm:text-2xl font-bold`}>
+                  Impact Hackathon Requirements
+                </h1>
+                <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                  <li>
+                    It must be able to connect to the PGN network and interact
+                    with EIP-4337 payment facilitators(Paymaster).
+                  </li>
+                  <li>
+                    It must allow users to make payments in fiat to other users
+                    on the PGN network.
+                  </li>
+                  <li>It must not require users to manage a private key</li>
+                  <li>It must be user-friendly and easy to use.</li>
+                  <li>It may not require users to buy gas tokens. (Bonus)</li>
+                </ul>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex flex-col gap-2">
+                <h1 className={` text-xl sm:text-2xl font-bold`}>
+                  Impact Hackathon Evaluation Criteria
+                </h1>
+                <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                  <li>
+                    <b>Functionality:</b> Does the application meet all of the
+                    requirements listed above?
+                  </li>
+                  <li>
+                    <b>Usability:</b> Is the application user-friendly and easy
+                    to use?
+                  </li>
+                  <li>
+                    <b>Creativity:</b> Does the application offer any innovative
+                    features or functionality?
+                  </li>
+                </ul>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex flex-col gap-2">
+                <h1 className={` text-xl sm:text-2xl font-bold`}>
+                  Impact Hackathon Prizes
+                </h1>
+                <ul className={` list-disc px-4 text-xl sm:text-2xl`}>
+                  <li>
+                    <b>1st place:</b> $250
+                  </li>
+                  <li>
+                    <b>2nd place:</b> $150
+                  </li>
+                  <li>
+                    <b>3rd place:</b> $100
+                  </li>
+                </ul>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div id="speakers" className="w-full flex flex-col gap-2">
+                <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
+                  Impact Summit
+                  <br />
+                  speakers
+                </h1>
+                <div
+                  className={`w-full h-[400px] overflow-y-auto text-xl sm:text-2xl flex items-center justify-center flex-row flex-wrap gap-4 sm:gap-8`}
+                >
+                  {speakers.map((speaker, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="flex h-32 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                      >
+                        <div className="w-14 h-14 rounded-full bg-slate-200">
+                          <Image
+                            src={speaker.src}
+                            alt={`${speaker.name}, speaker at impact summit 2023`}
+                            width={1000}
+                            height={1000}
+                            className="rounded-full object-cover w-full h-full"
+                          />
+                        </div>
+                        <span className={`text-lg w-3/4`}>
+                          {`${speaker.name} (${speaker.title})`}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div id="schedule" className="w-full flex flex-col gap-2">
+                <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
+                  Impact Summit
+                  <br />
+                  schedule
+                </h1>
+                <div
+                  className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-col`}
+                >
+                  {/* <Steps current={current} items={items} /> */}
+                  <div style={contentStyle}>{schedule[current].content}</div>
+                  <div className="w-full flex items-center justify-center my-5 gap-5">
+                    {current > 0 && (
+                      <button
+                        className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                        onClick={() => prev()}
+                      >
+                        Previous
+                      </button>
+                    )}
+                    {current < schedule.length - 1 && (
+                      <button
+                        className="w-full sm:w-1/3 bg-black rounded-full sm:rounded-xl text-white h-12 font-bold text-xl text-center flex items-center justify-center"
+                        type="default"
+                        onClick={() => next()}
+                      >
+                        Next
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div
+                id="contact"
+                className="w-full h-40 bg-black left-0 absolute"
+              >
+                <div className="w-full h-full text-white flex flex-col items-center justify-center">
+                  <div className="flex gap-5 mb-4">
+                    <Link
+                      href={"https://t.me/+tzbcHRsTb802Yjc0"}
+                      className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
+                    >
+                      <Image
+                        src="/telegram.png"
+                        alt="telegram"
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                    <Link
+                      href={"https://chat.whatsapp.com/Bz25P7lc7la1WVdzq090Tj"}
+                      className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
+                    >
+                      <Image
+                        src="/whatsapp.png"
+                        alt="whatsapp"
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                    <Link
+                      href={"https://twitter.com/Impactfulsummit"}
+                      className="bg-white rounded-full w-12 h-12 flex items-center justify-center"
+                    >
+                      <Image
+                        src="/twitter.png"
+                        alt="twitter"
+                        width={25}
+                        height={25}
+                      />
+                    </Link>
+                  </div>
+                  <h1>Impact Summit</h1>
+                  <h1>2023</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );
