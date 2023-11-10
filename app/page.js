@@ -563,8 +563,8 @@ export default function Home() {
                 <p
                   className={` text-left text-xl sm:text-2xl sm:mt-5 sm:text-center`}
                 >
-                  Highlighting the impactful activities and organizations in the
-                  region
+                  Highlighting impactful activities, projects and organizations in the
+                  African region.
                 </p>
                 <div
                   id="tickets"
