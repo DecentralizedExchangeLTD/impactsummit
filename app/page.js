@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FloatButton, Button, message, Steps, theme } from "antd";
+import { FloatButton, Button, message, Steps, Popover, theme } from "antd";
 import "./globals.css";
 
 export default function Home() {
@@ -312,6 +312,54 @@ export default function Home() {
     },
   ];
 
+  const participatingPartners = [
+    {
+      logo: "/tas.png",
+      content: (
+        <div>
+          <p>Tech and Sun</p>
+        </div>
+      ),
+      alt: "TAS",
+    },
+    {
+      logo: "/bw.png",
+      content: (
+        <div>
+          <p>Public Good Network</p>
+        </div>
+      ),
+      alt: "Public Good",
+    },
+    {
+      logo: "/greenpill.JPG",
+      content: (
+        <div>
+          <p>GreenPill</p>
+        </div>
+      ),
+      alt: "GreenPill",
+    },
+    {
+      logo: "/decentralized.png",
+      content: (
+        <div>
+          <p>Decentralized Exchange</p>
+        </div>
+      ),
+      alt: "Decentralized Exchange",
+    },
+    {
+      logo: "/switch.png",
+      content: (
+        <div>
+          <p>Switch Electric</p>
+        </div>
+      ),
+      alt: "Switch Electric",
+    },
+  ];
+
   const { token } = theme.useToken();
   const [current, setCurrent] = React.useState(0);
   const [showImpact, setShowImpact] = React.useState(false);
@@ -324,11 +372,11 @@ export default function Home() {
     setCurrent(current - 1);
   };
 
-  const items = schedule.map((item, index) => ({
-    key: index,
-    title: item.title,
-    description: item.time,
-  }));
+  // const items = schedule.map((item, index) => ({
+  //   key: index,
+  //   title: item.title,
+  //   description: item.time,
+  // }));
 
   const contentStyle = {
     textAlign: "center",
@@ -563,8 +611,8 @@ export default function Home() {
                 <p
                   className={` text-left text-xl sm:text-2xl sm:mt-5 sm:text-center`}
                 >
-                  Highlighting impactful activities, projects and organizations in the
-                  African region.
+                  Highlighting impactful activities, projects and organizations
+                  in the African region.
                 </p>
                 <div
                   id="tickets"
@@ -834,6 +882,40 @@ export default function Home() {
                         Next
                       </button>
                     )}
+                  </div>
+                </div>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div className="w-full flex flex-col gap-2">
+                <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
+                  Participating
+                  <br />
+                  partners
+                </h1>
+                <div
+                  className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-col`}
+                >
+                  <div className="w-full overflow-auto flex items-center justify-start sm:justify-center gap-3 pb-4">
+                    {participatingPartners.map((item, index) => {
+                      return (
+                        <Popover
+                          key={index}
+                          content={item.content}
+                          title="Participating Partner"
+                          className="w-10 h-10 sm:w-14 sm:h-14"
+                        >
+                          <Image
+                            src={item.logo}
+                            alt={`Impact summit 2023 participating partner: ${item.alt}`}
+                            width={100}
+                            height={100}
+                            className="bg-slate-200 rounded-full w-full h-full object-contain cursor-pointer"
+                          />
+                        </Popover>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
