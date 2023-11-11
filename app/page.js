@@ -335,7 +335,7 @@ export default function Home() {
       logo: "/greenpill.JPG",
       content: (
         <div>
-          <p>GreenPill</p>
+          <p>GreenPill Nigeria</p>
         </div>
       ),
       alt: "GreenPill",
@@ -892,7 +892,7 @@ export default function Home() {
                 <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
                   Participating
                   <br />
-                  partners
+                  Partners
                 </h1>
                 <div
                   className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-col`}
