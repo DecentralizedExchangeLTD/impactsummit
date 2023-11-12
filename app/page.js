@@ -28,12 +28,12 @@ export default function Home() {
     },
     {
       name: "Annaelechukwu",
-      title: "Cofounder - Blockchain UNN",
+      title: "Lead - Blockchain UNN",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
-      src: "/annaelechukwu.jpeg",
+      src: "/Annalechukwupic.jpg",
     },
     {
       name: "Christwin",
@@ -521,7 +521,7 @@ export default function Home() {
                 <li>TAS</li>
                 <li>Decentralized Exchange LTD</li>
                 <li>Kokonut Network</li>
-                <li>Metering Protocol</li>
+                <li>M3tering Protocol</li>
                 <li>BlockchainUNN</li>
                 <li>Blockchain Club FCET</li>
                 <li>{`B<>rder/ess2.0`}</li>
