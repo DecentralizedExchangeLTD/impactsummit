@@ -36,15 +36,6 @@ export default function Home() {
       src: "/annaelechukwu.jpeg",
     },
     {
-      name: "UncleSam ",
-      title: "Founder - Web3 Brand Therapist",
-      socials: [
-        { platform: "twitter", url: "link" },
-        { platform: "facebook", url: "link" },
-      ],
-      src: "/unclesam.jpeg",
-    },
-    {
       name: "Christwin",
       title: "Founder - SwitchElectric",
       socials: [
