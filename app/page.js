@@ -36,6 +36,15 @@ export default function Home() {
       src: "/Annalechukwupic.jpg",
     },
     {
+      name: "Luciano DeAngelo",
+      title: "Founder - Fund PG",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/luciano.jpg",
+    },
+    {
       name: "Christwin",
       title: "Founder - SwitchElectric",
       socials: [
