@@ -82,7 +82,7 @@ export default function Home() {
     },
     {
       name: "Izzy(decentralizedceo)",
-      title: "GreenPill Nigeria Chapter Steward. Founder of TAS",
+      title: "GreenPill Nigeria Chapter Steward. Founder - TAS",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
