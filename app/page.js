@@ -359,7 +359,7 @@ export default function Home() {
       alt: "Decentralized Exchange",
     },
     {
-      logo: "/PGA Logo.png",
+      logo: "/PGALogo.png",
       content: (
         <div>
           <p>Public Good Africa</p>
