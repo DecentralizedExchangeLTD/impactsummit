@@ -359,6 +359,24 @@ export default function Home() {
       alt: "Decentralized Exchange",
     },
     {
+      logo: "/PGA Logo.png",
+      content: (
+        <div>
+          <p>Public Good Africa</p>
+        </div>
+      ),
+      alt: "Public Good Africa",
+    },
+    {
+      logo: "/BCFCET.png",
+      content: (
+        <div>
+          <p>Bitcoin Club FCET</p>
+        </div>
+      ),
+      alt: "Bitcoin Club FCET",
+    },
+    {
       logo: "/switch.png",
       content: (
         <div>
