@@ -380,10 +380,10 @@ export default function Home() {
       logo: "/BCFCET.png",
       content: (
         <div>
-          <p>Bitcoin Club FCET</p>
+          <p>Blockchain Club FCET</p>
         </div>
       ),
-      alt: "Bitcoin Club FCET",
+      alt: "Blockchain Club FCET",
     },
   ];
 
