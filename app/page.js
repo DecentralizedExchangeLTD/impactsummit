@@ -90,6 +90,15 @@ export default function Home() {
       src: "/izzy.jpeg",
     },
     {
+      name: "Kester Ejikeme",
+      title: "Founder - Bitcoin Pidgin",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "btcpidginfounder.jpeg",
+    },
+    {
       name: "Crossvic",
       title: "Co-founder - Pidgin Parlour",
       socials: [
