@@ -353,7 +353,7 @@ export default function Home() {
       logo: "/decentralized.png",
       content: (
         <div>
-          <p>Decentralized Exchange</p>
+          <p>Decentralized Exchange LTD</p>
         </div>
       ),
       alt: "Decentralized Exchange",
@@ -368,15 +368,6 @@ export default function Home() {
       alt: "Public Good Africa",
     },
     {
-      logo: "/BCFCET.png",
-      content: (
-        <div>
-          <p>Bitcoin Club FCET</p>
-        </div>
-      ),
-      alt: "Bitcoin Club FCET",
-    },
-    {
       logo: "/switch.png",
       content: (
         <div>
@@ -384,6 +375,15 @@ export default function Home() {
         </div>
       ),
       alt: "Switch Electric",
+    },
+    {
+      logo: "/BCFCET.png",
+      content: (
+        <div>
+          <p>Bitcoin Club FCET</p>
+        </div>
+      ),
+      alt: "Bitcoin Club FCET",
     },
   ];
 
