@@ -19,7 +19,7 @@ export default function Home() {
   const speakers = [
     {
       name: "Jimi Cohen",
-      title: "Founder - Treegens DAO",
+      title: "Founder - Treegens/LetsGrow DAO",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
@@ -28,21 +28,21 @@ export default function Home() {
     },
     {
       name: "Annaelechukwu",
-      title: "Cofounder - Blockchain UNN",
+      title: "Lead - Blockchain UNN",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
-      src: "/annaelechukwu.jpeg",
+      src: "/Annalechukwupic.jpg",
     },
     {
-      name: "UncleSam ",
-      title: "Founder - Web3 Brand Therapist",
+      name: "Luciano DeAngelo",
+      title: "Founder - Fund PG",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
-      src: "/unclesam.jpeg",
+      src: "/luciano.jpg",
     },
     {
       name: "Christwin",
@@ -82,12 +82,21 @@ export default function Home() {
     },
     {
       name: "Izzy(decentralizedceo)",
-      title: "GreenPill Nigeria Chapter Steward. Founder of TAS",
+      title: "GreenPill Nigeria Chapter Steward. Founder - TAS",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
       src: "/izzy.jpeg",
+    },
+    {
+      name: "Kester Ejikeme",
+      title: "Founder - Bitcoin Pidgin",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "btcpidginfounder.jpeg",
     },
     {
       name: "Crossvic",
@@ -97,6 +106,24 @@ export default function Home() {
         { platform: "facebook", url: "link" },
       ],
       src: "/crossvic.jpeg",
+    },
+    {
+      name: "Nancy Amandi",
+      title: "Lead - DeSci Africa",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/Nancy.jpeg",
+    },
+    {
+      name: "Muntala",
+      title: "Founder - Public Good Africa",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/Muntala.jpeg",
     },
   ];
 
@@ -361,10 +388,19 @@ export default function Home() {
       logo: "/decentralized.png",
       content: (
         <div>
-          <p>Decentralized Exchange</p>
+          <p>Decentralized Exchange LTD</p>
         </div>
       ),
       alt: "Decentralized Exchange",
+    },
+    {
+      logo: "/PGALogo.png",
+      content: (
+        <div>
+          <p>Public Good Africa</p>
+        </div>
+      ),
+      alt: "Public Good Africa",
     },
     {
       logo: "/switch.png",
@@ -374,6 +410,15 @@ export default function Home() {
         </div>
       ),
       alt: "Switch Electric",
+    },
+    {
+      logo: "/BCFCET.png",
+      content: (
+        <div>
+          <p>Blockchain Club FCET</p>
+        </div>
+      ),
+      alt: "Blockchain Club FCET",
     },
   ];
 
@@ -554,7 +599,7 @@ export default function Home() {
                 <li>TAS</li>
                 <li>Decentralized Exchange LTD</li>
                 <li>Kokonut Network</li>
-                <li>Metering Protocol</li>
+                <li>M3tering Protocol</li>
                 <li>BlockchainUNN</li>
                 <li>Blockchain Club FCET</li>
                 <li>{`B<>rder/ess2.0`}</li>
