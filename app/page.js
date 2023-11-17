@@ -19,7 +19,7 @@ export default function Home() {
   const speakers = [
     {
       name: "Jimi Cohen",
-      title: "Founder - Treegens DAO",
+      title: "Founder - Treegens/LetsGrow DAO",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
@@ -106,6 +106,24 @@ export default function Home() {
         { platform: "facebook", url: "link" },
       ],
       src: "/crossvic.jpeg",
+    },
+    {
+      name: "Nancy Amandi",
+      title: "Lead - DeSci Africa",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/Nancy.jpeg",
+    },
+    {
+      name: "Muntala",
+      title: "Founder - Public Good Africa",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/Muntala.jpeg",
     },
   ];
 
