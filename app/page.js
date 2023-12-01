@@ -33,7 +33,7 @@ export default function Home() {
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
-      src: "/Johnruth.jpg",
+      src: "/Johnruth.jpeg",
     },
     {
       name: "Bitbeckers",
