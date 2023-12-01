@@ -118,7 +118,7 @@ export default function Home() {
     },
     {
       name: "Princewill Ebubechukwu",
-      title: "Lead - Borderless Tech Club Nekede",
+      title: "Lead - B<>rder/ess Tech Club Nekede",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
