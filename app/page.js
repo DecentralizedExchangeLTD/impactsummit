@@ -96,7 +96,7 @@ export default function Home() {
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
-      src: "btcpidginfounder.jpeg",
+      src: "/btcpidginfounder.jpeg",
     },
     {
       name: "Crossvic",
@@ -127,7 +127,7 @@ export default function Home() {
     },
   ];
 
-  const schedule = [
+  let schedule = [
     {
       title: "Registration Open",
       content: (
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       ),
       time: "08:00 AM",
-      number: 1,
+      number: 0,
     },
     {
       title: "Opening Statements",
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       ),
       time: "09:00 AM - 09:15 AM",
-      number: 2,
+      number: 1,
     },
     {
       title: "What are Public Goods and how does it help us?",
@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       ),
       time: "09:15 AM - 09:30 AM",
-      number: 3,
+      number: 2,
     },
     {
       title: "Using your niche as a public good",
@@ -177,8 +177,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "9:30 AM - 10:00 AM",
-      number: 4,
+      time: "09:30 AM - 10:00 AM",
+      number: 3,
     },
     {
       title: "Morning Break",
@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       ),
       time: "10:00 AM - 10:15 AM",
-      number: 5,
+      number: 4,
     },
     {
       title: "Environmental Sustainability through Regenerative Finance",
@@ -204,7 +204,7 @@ export default function Home() {
         </div>
       ),
       time: "10:15 AM - 11:00 AM",
-      number: 6,
+      number: 5,
     },
     {
       title: "Impactful Initiatives and why they matter",
@@ -218,7 +218,7 @@ export default function Home() {
         </div>
       ),
       time: "11:00 AM - 11:30 AM",
-      number: 7,
+      number: 6,
     },
     {
       title: "What is Quadratic Funding and how does it help?",
@@ -232,7 +232,7 @@ export default function Home() {
         </div>
       ),
       time: "11:30 AM - 12:00 PM",
-      number: 8,
+      number: 7,
     },
     {
       title: "Lunch Break",
@@ -244,7 +244,7 @@ export default function Home() {
         </div>
       ),
       time: "12:00 PM - 12:45 PM",
-      number: 9,
+      number: 8,
     },
     {
       title: "Proof of impact. How is it measured? ",
@@ -257,8 +257,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "1:00 PM - 1:30 PM",
-      number: 10,
+      time: "13:00 PM - 13:30 PM",
+      number: 9,
     },
     {
       title: "Importance of Web3 education as a Public Good",
@@ -271,8 +271,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "2:00 PM - 2:15 PM",
-      number: 11,
+      time: "14:00 PM - 14:15 PM",
+      number: 10,
     },
     {
       title: "How to unlock unstoppable motivation & the Future of ReFi",
@@ -285,8 +285,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "2:15 PM - 2:45 PM",
-      number: 12,
+      time: "14:15 PM - 14:45 PM",
+      number: 11,
     },
     {
       title: "Afternoon break",
@@ -297,8 +297,8 @@ export default function Home() {
           <p>food time</p>
         </div>
       ),
-      time: "3:00 PM - 3:15 PM",
-      number: 13,
+      time: "15:00 PM - 15:15 PM",
+      number: 12,
     },
     {
       title: "Network Goods from a Devs view",
@@ -311,8 +311,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "3:15 PM - 3:45 PM",
-      number: 14,
+      time: "15:15 PM - 15:45 PM",
+      number: 13,
     },
     {
       title: "Hackathon showcase and results",
@@ -323,8 +323,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "4:00 PM - 4:15 PM",
-      number: 15,
+      time: "16:00 PM - 16:15 PM",
+      number: 14,
     },
     {
       title:
@@ -339,8 +339,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "4:15 PM - 4:45 PM",
-      number: 16,
+      time: "16:15 PM - 16:45 PM",
+      number: 15,
     },
     {
       title: "Closing Remarks and Thank You",
@@ -351,8 +351,8 @@ export default function Home() {
           <p>speakers</p>
         </div>
       ),
-      time: "5:00 PM",
-      number: 17,
+      time: "17:00 PM",
+      number: 16,
     },
   ];
 
@@ -425,13 +425,16 @@ export default function Home() {
   const { token } = theme.useToken();
   const [current, setCurrent] = React.useState(0);
   const [showImpact, setShowImpact] = React.useState(false);
+  const [trackedEvent, setTrackedEvent] = React.useState(false);
 
   const next = () => {
     setCurrent(current + 1);
+    setTrackedEvent(false);
   };
 
   const prev = () => {
     setCurrent(current - 1);
+    setTrackedEvent(false);
   };
 
   // const items = schedule.map((item, index) => ({
@@ -440,12 +443,22 @@ export default function Home() {
   //   description: item.time,
   // }));
 
-  // const debug = () => {
-  //   let hour = time.getHours();
-  //   if (hour === 20) {
-  //     setCurrent(() => schedule[11].number);
-  //   }
-  // };
+  const scheduleAutomation = () => {
+    let day = new Date();
+    let currentHour = day.getHours();
+
+    const currentEvent = schedule.find((activity) => {
+      return activity?.time.substring(0, 2).includes(currentHour.toString());
+    });
+
+    currentEvent ? setCurrent(currentEvent.number) : setCurrent(0);
+
+    currentEvent ? setTrackedEvent(true) : setTrackedEvent(false);
+  };
+
+  React.useEffect(() => {
+    scheduleAutomation();
+  }, []);
 
   const contentStyle = {
     textAlign: "center",
@@ -668,7 +681,7 @@ export default function Home() {
                   <br />
                   <span className="text-green-500">Nigeria</span> 2023.
                 </h1>
-                {/* <button onClick={debug}>debug</button> */}
+
                 <div className="w-full aspect-video object-cover h-60 sm:h-[40rem]">
                   <Image
                     src="/mountsummit.jpeg"
@@ -933,7 +946,16 @@ export default function Home() {
                   className={`w-full text-xl sm:text-2xl flex items-center justify-center flex-col`}
                 >
                   {/* <Steps current={current} items={items} /> */}
-                  <div style={contentStyle}>{schedule[current].content}</div>
+                  <div style={contentStyle}>
+                    {schedule[current].content}
+                    {trackedEvent ? (
+                      <div className="text-white bg-green-500 p-1 rounded-b-lg">
+                        current event
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                   <div className="w-full flex items-center justify-center my-5 gap-5">
                     {current > 0 && (
                       <button
