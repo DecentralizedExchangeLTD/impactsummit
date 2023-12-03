@@ -27,13 +27,22 @@ export default function Home() {
       src: "/jimicohen.jpeg",
     },
     {
-      name: "Annaelechukwu",
-      title: "Lead - Blockchain UNN",
+      name: "Jon Ruth",
+      title: "Founder - Solar Foundation",
       socials: [
         { platform: "twitter", url: "link" },
         { platform: "facebook", url: "link" },
       ],
-      src: "/Annalechukwupic.jpg",
+      src: "/Johnruth.jpeg",
+    },
+    {
+      name: "Bitbeckers",
+      title: "Lead Dev - Hypercerts Foundation",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/BitBecker.jpeg",
     },
     {
       name: "Luciano DeAngelo",
@@ -106,6 +115,15 @@ export default function Home() {
         { platform: "facebook", url: "link" },
       ],
       src: "/crossvic.jpeg",
+    },
+    {
+      name: "Princewill Ebubechukwu",
+      title: "Lead - B<>rder/ess Tech Club Nekede",
+      socials: [
+        { platform: "twitter", url: "link" },
+        { platform: "facebook", url: "link" },
+      ],
+      src: "/PeeJay.jpeg",
     },
     {
       name: "Nancy Amandi",
