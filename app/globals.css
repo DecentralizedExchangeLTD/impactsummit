@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:where(.css-dev-only-do-not-override-2i2tap).ant-card {
+  z-index: -2;
+}
+
+:where(.css-dev-only-do-not-override-2i2tap).ant-ribbon.ant-ribbon-color-gold {
+  z-index: -1;
+}

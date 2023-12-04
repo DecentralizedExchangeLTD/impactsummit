@@ -160,6 +160,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒1 Hr">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">Registrations Open</p>
@@ -170,14 +171,22 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>08:00 AM</p>
-              <p>Registration process</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                08:00 AM
+              </p>
+              <Image
+                src="/website.png"
+                alt="impact summit event registration"
+                width={1000}
+                height={1000}
+                className="w-full h-full lg:w-1/2 aspect-video object-contain"
+              />
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 8, 0, 0, 0),
-      endTime: new Date(2023, 11, 4, 8, 59, 59, 0),
+      startTime: new Date(2023, 11, 5, 8, 0, 0, 0),
+      endTime: new Date(2023, 11, 5, 8, 59, 59, 0),
       number: 0,
     },
     {
@@ -185,6 +194,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒15 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">Opening Statements</p>
@@ -195,14 +205,44 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>09:00 AM - 09:15 AM</p>
-              <p>Christwin</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                09:00 AM - 09:15 AM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = ["Christwin"];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 9, 0, 0, 0),
-      endTime: new Date(2023, 11, 4, 9, 14, 59, 0),
+      startTime: new Date(2023, 11, 5, 9, 0, 0, 0),
+      endTime: new Date(2023, 11, 5, 9, 14, 59, 0),
       number: 1,
     },
     {
@@ -210,6 +250,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒15 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -224,14 +265,44 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>09:15 AM - 09:30 AM</p>
-              <p>Muntala, Izzy</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                09:15 AM - 09:30 AM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = ["Muntala", "Izzy(decentralizedceo)"];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 9, 15, 0, 0),
-      endTime: new Date(2023, 11, 4, 9, 29, 59, 0),
+      startTime: new Date(2023, 11, 5, 9, 15, 0, 0),
+      endTime: new Date(2023, 11, 5, 9, 29, 59, 0),
       number: 2,
     },
     {
@@ -239,6 +310,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -255,14 +327,44 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>9:30 AM - 10:00 AM</p>
-              <p>Jimi, Izzy</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                9:30 AM - 10:00 AM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = ["Jimi Cohen", "Izzy(decentralizedceo)"];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 9, 30, 0, 0),
-      endTime: new Date(2023, 11, 4, 9, 59, 59, 0),
+      startTime: new Date(2023, 11, 5, 9, 30, 0, 0),
+      endTime: new Date(2023, 11, 5, 9, 59, 59, 0),
       number: 3,
     },
     {
@@ -270,6 +372,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒15 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">Morning Break</p>
@@ -280,14 +383,22 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>10:00 AM - 10:15 AM</p>
-              <p>free time</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                10:00 AM - 10:15 AM
+              </p>
+              <Image
+                src="/take-a-break.png"
+                alt="impact summit break time"
+                width={1000}
+                height={1000}
+                className="w-full h-full lg:w-1/2 aspect-video object-contain"
+              />
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 10, 0, 0, 0),
-      endTime: new Date(2023, 11, 4, 10, 14, 59, 0),
+      startTime: new Date(2023, 11, 5, 10, 0, 0, 0),
+      endTime: new Date(2023, 11, 5, 10, 14, 59, 0),
       number: 4,
     },
     {
@@ -295,6 +406,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -310,14 +422,48 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>10:15 AM - 10:45 AM</p>
-              <p>Amio, Kester, Princewill</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                10:15 AM - 10:45 AM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = [
+                    "Amio Anthony",
+                    "Kester Ejikeme",
+                    "Princewill Ebubechukwu",
+                  ];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 10, 15, 0, 0),
-      endTime: new Date(2023, 11, 4, 10, 44, 59, 0),
+      startTime: new Date(2023, 11, 5, 10, 15, 0, 0),
+      endTime: new Date(2023, 11, 5, 10, 44, 59, 0),
       number: 5,
     },
     {
@@ -326,6 +472,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -342,14 +489,45 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>10:45 AM - 11:15 AM</p>
-              <p>Christwin, Silas, Amara, Nancy</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                10:45 AM - 11:15 AM
+              </p>
+              {/* <p>Silas, Amara</p> */}
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = ["Christwin", "Nancy Amandi"];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 10, 45, 0, 0),
-      endTime: new Date(2023, 11, 4, 11, 14, 59, 0),
+      startTime: new Date(2023, 11, 5, 10, 45, 0, 0),
+      endTime: new Date(2023, 11, 5, 11, 14, 59, 0),
       number: 6,
     },
     {
@@ -357,6 +535,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -371,14 +550,44 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>11:15 AM - 11:45 AM</p>
-              <p>Chidi, Amio, Eric</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                11:15 AM - 11:45 AM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = ["Chidi Okeke", "Amio Anthony", "Eric Anan"];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 11, 15, 0, 0),
-      endTime: new Date(2023, 11, 4, 11, 44, 59, 0),
+      startTime: new Date(2023, 11, 5, 11, 15, 0, 0),
+      endTime: new Date(2023, 11, 5, 11, 44, 59, 0),
       number: 7,
     },
     {
@@ -386,6 +595,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒45 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">Lunch Break</p>
@@ -396,14 +606,22 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>11:45 AM - 12:30 PM</p>
-              <p>free time</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                11:45 AM - 12:30 PM
+              </p>
+              <Image
+                src="/take-a-break.png"
+                alt="impact summit break time"
+                width={1000}
+                height={1000}
+                className="w-full h-full lg:w-1/2 aspect-video object-contain"
+              />
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 11, 45, 0, 0),
-      endTime: new Date(2023, 11, 4, 12, 29, 59, 0),
+      startTime: new Date(2023, 11, 5, 11, 45, 0, 0),
+      endTime: new Date(2023, 11, 5, 12, 29, 59, 0),
       number: 8,
     },
     {
@@ -411,6 +629,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -426,14 +645,47 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>12:45 PM - 1:15 PM</p>
-              <p>Izzy, Luciano</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                12:45 PM - 1:15 PM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = [
+                    "Izzy(decentralizedceo)",
+                    "Luciano DeAngelo",
+                  ];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 12, 45, 0, 0),
-      endTime: new Date(2023, 11, 4, 13, 14, 59, 0),
+      startTime: new Date(2023, 11, 5, 12, 45, 0, 0),
+      endTime: new Date(2023, 11, 5, 13, 14, 59, 0),
       number: 9,
     },
     {
@@ -441,6 +693,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -456,14 +709,48 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>1:30 PM - 2:00 PM</p>
-              <p>Izzy, Bitbecker, Jon(Solar Foundation)</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                1:30 PM - 2:00 PM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = [
+                    "Izzy(decentralizedceo)",
+                    "Bitbeckers",
+                    "Jon Ruth",
+                  ];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 13, 30, 0, 0),
-      endTime: new Date(2023, 11, 4, 13, 59, 59, 0),
+      startTime: new Date(2023, 11, 5, 13, 30, 0, 0),
+      endTime: new Date(2023, 11, 5, 13, 59, 59, 0),
       number: 10,
     },
     {
@@ -471,6 +758,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -485,14 +773,48 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>2:00 PM - 2:30 PM</p>
-              <p>Amio, Crossvic, Kester E.</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                2:00 PM - 2:30 PM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = [
+                    "Amio Anthony",
+                    "Crossvic",
+                    "Kester Ejikeme",
+                  ];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 14, 0, 0, 0),
-      endTime: new Date(2023, 11, 4, 14, 29, 59, 0),
+      startTime: new Date(2023, 11, 5, 14, 0, 0, 0),
+      endTime: new Date(2023, 11, 5, 14, 29, 59, 0),
       number: 11,
     },
     {
@@ -500,6 +822,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -514,14 +837,48 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>2:30 PM - 3:00 PM</p>
-              <p>Christwin, Princewill, Eric</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                2:30 PM - 3:00 PM
+              </p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                Speakers:
+              </p>{" "}
+              <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
+                {speakers.map((speaker, index) => {
+                  const speaking = [
+                    "Christwin",
+                    "Princewill Ebubechukwu",
+                    "Eric Anan",
+                  ];
+                  return speaking.includes(speaker.name) ? (
+                    <div
+                      key={index}
+                      className="flex h-16 lg:h-24 mb-1 lg:mb-3 items-center justify-start gap-2 bg-[#f9f9f9] rounded-xl border w-full md:w-[47.5%] lg:w-[31%] p-4"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-200">
+                        <Image
+                          src={speaker.src}
+                          alt={`${speaker.name}, speaker at impact summit 2023`}
+                          width={1000}
+                          height={1000}
+                          className="rounded-full object-cover w-full h-full"
+                        />
+                      </div>
+                      <span className={`text-sm lg:text-lg w-3/4`}>
+                        {`${speaker.name} (${speaker.title})`}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 14, 30, 0, 0),
-      endTime: new Date(2023, 11, 4, 14, 59, 59, 0),
+      startTime: new Date(2023, 11, 5, 14, 30, 0, 0),
+      endTime: new Date(2023, 11, 5, 14, 59, 59, 0),
       number: 12,
     },
     {
@@ -529,6 +886,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒1hr 30 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">
@@ -543,14 +901,22 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>3:15 PM - 4:45 PM</p>
-              <p>free time</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                3:15 PM - 4:45 PM
+              </p>
+              <Image
+                src="/handshake.png"
+                alt="impact summit business networking"
+                width={1000}
+                height={1000}
+                className="w-full h-full lg:w-1/2 aspect-video object-contain"
+              />
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 15, 15, 0, 0),
-      endTime: new Date(2023, 11, 4, 16, 44, 59, 0),
+      startTime: new Date(2023, 11, 5, 15, 15, 0, 0),
+      endTime: new Date(2023, 11, 5, 16, 44, 59, 0),
       number: 13,
     },
     {
@@ -558,6 +924,7 @@ export default function Home() {
       content: (
         <Badge.Ribbon color="gold" text="🕒15 min">
           <Card
+            bordered={false}
             title={
               <div>
                 <p className="text-sm flex sm:hidden">Closing Remarks</p>
@@ -568,14 +935,23 @@ export default function Home() {
             size="default"
           >
             <div className="flex flex-col h-[260px] w-full items-center justify-center">
-              <p>4:45 PM - 5:00 PM</p>
-              <p>Thank you</p>
+              <p className="text-xs w-full text-center bg-black text-white bg-gradient-to-r from-white via-[#000] to-white">
+                4:45 PM - 5:00 PM
+              </p>
+              <p>Thank you for participating</p>
+              <Image
+                src="/bow.png"
+                alt="impact summit business networking"
+                width={1000}
+                height={1000}
+                className="w-full h-full lg:w-1/2 aspect-video object-contain"
+              />
             </div>
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 4, 16, 45, 0, 0),
-      endTime: new Date(2023, 11, 4, 17, 0, 0, 0),
+      startTime: new Date(2023, 11, 5, 16, 45, 0, 0),
+      endTime: new Date(2023, 11, 5, 17, 0, 0, 0),
       number: 14,
     },
   ];
@@ -651,16 +1027,6 @@ export default function Home() {
   const [showImpact, setShowImpact] = React.useState(false);
   const [trackedEvent, setTrackedEvent] = React.useState(false);
 
-  const next = () => {
-    setCurrent(current + 1);
-    setTrackedEvent(false);
-  };
-
-  const prev = () => {
-    setCurrent(current - 1);
-    setTrackedEvent(false);
-  };
-
   // const items = schedule.map((item, index) => ({
   //   key: index,
   //   title: item.title,
@@ -674,15 +1040,25 @@ export default function Home() {
     const currentActivity = schedule.find((activity) => {
       const startTime = activity?.startTime.getTime();
       const endTime = activity?.endTime.getTime();
+      startTime <= currentTime && currentTime <= endTime
+        ? (activity.isOngoing = true)
+        : (activity.isOngoing = false);
 
       return startTime <= currentTime && currentTime <= endTime;
     });
-
-    console.log(currentActivity);
-
     currentActivity ? setCurrent(currentActivity.number) : setCurrent(0);
 
     currentActivity ? setTrackedEvent(true) : setTrackedEvent(false);
+  };
+
+  const next = () => {
+    setCurrent(current + 1);
+    setTrackedEvent(false);
+  };
+
+  const prev = () => {
+    setCurrent(current - 1);
+    setTrackedEvent(false);
   };
 
   React.useEffect(() => {
@@ -696,6 +1072,7 @@ export default function Home() {
     borderRadius: token.borderRadiusLG,
     border: `1px solid ${token.colorBorder}`,
     marginTop: 16,
+    zIndex: -1,
     width: "100%",
   };
 
