@@ -2,7 +2,16 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FloatButton, Button, message, Steps, Popover, theme } from "antd";
+import {
+  FloatButton,
+  Button,
+  message,
+  Steps,
+  Card,
+  Badge,
+  Popover,
+  theme,
+} from "antd";
 import "./globals.css";
 
 export default function Home() {
@@ -147,230 +156,427 @@ export default function Home() {
 
   let schedule = [
     {
-      title: "Registration Open",
+      title: "Registrations Open",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Registration Open</h1>
-          <p>08:00 AM</p>
-          <p>Registration process</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒1 Hr">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">Registrations Open</p>
+                <p className="hidden sm:flex">Registrations Open</p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>08:00 AM</p>
+              <p>Registration process</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "08:00 AM",
+      startTime: new Date(2023, 11, 4, 8, 0, 0, 0),
+      endTime: new Date(2023, 11, 4, 8, 59, 59, 0),
       number: 0,
     },
     {
       title: "Opening Statements",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Opening Statements</h1>
-          <p>09:00 AM - 09:15 AM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒15 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">Opening Statements</p>
+                <p className="hidden sm:flex">Opening Statements</p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>09:00 AM - 09:15 AM</p>
+              <p>Christwin</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "09:00 AM - 09:15 AM",
+      startTime: new Date(2023, 11, 4, 9, 0, 0, 0),
+      endTime: new Date(2023, 11, 4, 9, 14, 59, 0),
       number: 1,
     },
     {
       title: "What are Public Goods and how does it help us?",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            What are Public Goods and how does it help us?
-          </h1>
-          <p>09:15 AM - 09:30 AM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒15 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  What are Public Goods and <br /> how does it help us?
+                </p>
+                <p className="hidden sm:flex">
+                  What are Public Goods and how does it help us?
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>09:15 AM - 09:30 AM</p>
+              <p>Muntala, Izzy</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "09:15 AM - 09:30 AM",
+      startTime: new Date(2023, 11, 4, 9, 15, 0, 0),
+      endTime: new Date(2023, 11, 4, 9, 29, 59, 0),
       number: 2,
     },
     {
-      title: "Using your niche as a public good",
+      title: "How to unlock unstoppable motivation & the Future of Refi",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Using your niche as a public good
-          </h1>
-          <p>9:30 AM - 10:00 AM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  How to unlock unstoppable
+                  <br />
+                  motivation & the Future of Refi
+                </p>
+                <p className="hidden sm:flex">
+                  How to unlock unstoppable motivation & the Future of Refi
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>9:30 AM - 10:00 AM</p>
+              <p>Jimi, Izzy</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "09:30 AM - 10:00 AM",
+      startTime: new Date(2023, 11, 4, 9, 30, 0, 0),
+      endTime: new Date(2023, 11, 4, 9, 59, 59, 0),
       number: 3,
     },
     {
       title: "Morning Break",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Morning Break</h1>
-          <p>10:00 AM - 10:15 AM</p>
-          <p>free time</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒15 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">Morning Break</p>
+                <p className="hidden sm:flex">Morning Break</p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>10:00 AM - 10:15 AM</p>
+              <p>free time</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "10:00 AM - 10:15 AM",
+      startTime: new Date(2023, 11, 4, 10, 0, 0, 0),
+      endTime: new Date(2023, 11, 4, 10, 14, 59, 0),
       number: 4,
     },
     {
-      title: "Environmental Sustainability through Regenerative Finance",
+      title: "Using your niche as a Public Good",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Environmental Sustainability through Regenerative Finance
-          </h1>
-          <p>10:15 AM - 11:00 AM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Using your niche as a <br />
+                  Public Good
+                </p>
+                <p className="hidden sm:flex">
+                  Using your niche as a Public Good
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>10:15 AM - 10:45 AM</p>
+              <p>Amio, Kester, Princewill</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "10:15 AM - 11:00 AM",
+      startTime: new Date(2023, 11, 4, 10, 15, 0, 0),
+      endTime: new Date(2023, 11, 4, 10, 44, 59, 0),
       number: 5,
+    },
+    {
+      title:
+        "Bridging the digital divide: Leveraging Web3 to connect the unconnected",
+      content: (
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Bridging the digital divide: <br />
+                  Leveraging Web3 to connect the unconnected
+                </p>
+                <p className="hidden sm:flex">
+                  Bridging the digital divide: Leveraging Web3 to connect the
+                  unconnected
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>10:45 AM - 11:15 AM</p>
+              <p>Christwin, Silas, Amara, Nancy</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
+      ),
+      startTime: new Date(2023, 11, 4, 10, 45, 0, 0),
+      endTime: new Date(2023, 11, 4, 11, 14, 59, 0),
+      number: 6,
     },
     {
       title: "Impactful Initiatives and why they matter",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Impactful Initiatives and why they matter
-          </h1>
-          <p>11:00 AM - 11:30 AM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Impactful Initiatives and <br /> why they matter
+                </p>
+                <p className="hidden sm:flex">
+                  Impactful Initiatives and why they matter
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>11:15 AM - 11:45 AM</p>
+              <p>Chidi, Amio, Eric</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "11:00 AM - 11:30 AM",
-      number: 6,
-    },
-    {
-      title: "What is Quadratic Funding and how does it help?",
-      content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            What is Quadratic Funding and how does it help?
-          </h1>
-          <p>11:30 AM - 12:00 PM</p>
-          <p>speakers</p>
-        </div>
-      ),
-      time: "11:30 AM - 12:00 PM",
+      startTime: new Date(2023, 11, 4, 11, 15, 0, 0),
+      endTime: new Date(2023, 11, 4, 11, 44, 59, 0),
       number: 7,
     },
     {
       title: "Lunch Break",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Lunch Break</h1>
-          <p>12:00 PM - 12:45 PM</p>
-          <p>food time</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒45 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">Lunch Break</p>
+                <p className="hidden sm:flex">Lunch Break</p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>11:45 AM - 12:30 PM</p>
+              <p>free time</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "12:00 PM - 12:45 PM",
+      startTime: new Date(2023, 11, 4, 11, 45, 0, 0),
+      endTime: new Date(2023, 11, 4, 12, 29, 59, 0),
       number: 8,
     },
     {
-      title: "Proof of impact. How is it measured? ",
+      title: "How do we fund Public Goods in Web3?",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Proof of impact. How is it measured?{" "}
-          </h1>
-          <p>1:00 PM - 1:30 PM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  How do we fund Public Goods
+                  <br /> in Web3?
+                </p>
+                <p className="hidden sm:flex">
+                  How do we fund Public Goods in Web3?
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>12:45 PM - 1:15 PM</p>
+              <p>Izzy, Luciano</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "13:00 PM - 13:30 PM",
+      startTime: new Date(2023, 11, 4, 12, 45, 0, 0),
+      endTime: new Date(2023, 11, 4, 13, 14, 59, 0),
       number: 9,
     },
     {
-      title: "Importance of Web3 education as a Public Good",
+      title: "Proof of impact. How is it measured?",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Importance of Web3 education as a Public Good
-          </h1>
-          <p>2:00 PM - 2:15 PM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Proof of impact. <br />
+                  How is it measured?
+                </p>
+                <p className="hidden sm:flex">
+                  Proof of impact. How is it measured?
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>1:30 PM - 2:00 PM</p>
+              <p>Izzy, Bitbecker, Jon(Solar Foundation)</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "14:00 PM - 14:15 PM",
+      startTime: new Date(2023, 11, 4, 13, 30, 0, 0),
+      endTime: new Date(2023, 11, 4, 13, 59, 59, 0),
       number: 10,
     },
     {
-      title: "How to unlock unstoppable motivation & the Future of ReFi",
+      title: "Importance of native communication in Web3",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            How to unlock unstoppable motivation & the Future of ReFi
-          </h1>
-          <p>2:15 PM - 2:45 PM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Importance of native communication <br /> in Web3
+                </p>
+                <p className="hidden sm:flex">
+                  Importance of native communication in Web3
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>2:00 PM - 2:30 PM</p>
+              <p>Amio, Crossvic, Kester E.</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "14:15 PM - 14:45 PM",
+      startTime: new Date(2023, 11, 4, 14, 0, 0, 0),
+      endTime: new Date(2023, 11, 4, 14, 29, 59, 0),
       number: 11,
-    },
-    {
-      title: "Afternoon break",
-      content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Afternoon break</h1>
-          <p>3:00 PM - 3:15 PM</p>
-          <p>food time</p>
-        </div>
-      ),
-      time: "15:00 PM - 15:15 PM",
-      number: 12,
     },
     {
       title: "Network Goods from a Devs view",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Network Goods from a Dev&apos;s view
-          </h1>
-          <p>3:15 PM - 3:45 PM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Network Goods from a Dev&apos;s view
+                </p>
+                <p className="hidden sm:flex">
+                  Network Goods from a Dev&apos;s view
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>2:30 PM - 3:00 PM</p>
+              <p>Christwin, Princewill, Eric</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "15:15 PM - 15:45 PM",
+      startTime: new Date(2023, 11, 4, 14, 30, 0, 0),
+      endTime: new Date(2023, 11, 4, 14, 59, 59, 0),
+      number: 12,
+    },
+    {
+      title: "Networking sessions(Pictures etc)",
+      content: (
+        <Badge.Ribbon color="gold" text="🕒1hr 30 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">
+                  Networking sessions(Pictures etc)
+                </p>
+                <p className="hidden sm:flex">
+                  Networking sessions(Pictures etc)
+                </p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>3:15 PM - 4:45 PM</p>
+              <p>free time</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
+      ),
+      startTime: new Date(2023, 11, 4, 15, 15, 0, 0),
+      endTime: new Date(2023, 11, 4, 16, 44, 59, 0),
       number: 13,
     },
     {
-      title: "Hackathon showcase and results",
+      title: "Closing Remarks",
       content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Hackathon showcase and results</h1>
-          <p>4:00 PM - 4:15 PM</p>
-          <p>speakers</p>
-        </div>
+        <Badge.Ribbon color="gold" text="🕒15 min">
+          <Card
+            title={
+              <div>
+                <p className="text-sm flex sm:hidden">Closing Remarks</p>
+                <p className="hidden sm:flex">Closing Remarks</p>
+              </div>
+            }
+            style={{ textAlign: "left" }}
+            size="default"
+          >
+            <div className="flex flex-col h-[260px] w-full items-center justify-center">
+              <p>4:45 PM - 5:00 PM</p>
+              <p>Thank you</p>
+            </div>
+          </Card>
+        </Badge.Ribbon>
       ),
-      time: "16:00 PM - 16:15 PM",
+      startTime: new Date(2023, 11, 4, 16, 45, 0, 0),
+      endTime: new Date(2023, 11, 4, 17, 0, 0, 0),
       number: 14,
-    },
-    {
-      title:
-        "Future of Public Goods with Quadratic Funding(The GitCoin Initiative)",
-      content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">
-            Future of Public Goods with Quadratic Funding(The GitCoin
-            Initiative)
-          </h1>
-          <p>4:15 PM - 4:45 PM</p>
-          <p>speakers</p>
-        </div>
-      ),
-      time: "16:15 PM - 16:45 PM",
-      number: 15,
-    },
-    {
-      title: "Closing Remarks and Thank You",
-      content: (
-        <div className="flex flex-col h-[260px] w-full items-center justify-center">
-          <h1 className="text-xl font-bold">Closing Remarks and Thank You</h1>
-          <p>5:00 PM</p>
-          <p>speakers</p>
-        </div>
-      ),
-      time: "17:00 PM",
-      number: 16,
     },
   ];
 
@@ -462,16 +668,21 @@ export default function Home() {
   // }));
 
   const scheduleAutomation = () => {
-    let day = new Date();
-    let currentHour = day.getHours();
+    let eventDay = new Date();
+    let currentTime = eventDay.getTime();
 
-    const currentEvent = schedule.find((activity) => {
-      return activity?.time.substring(0, 2).includes(currentHour.toString());
+    const currentActivity = schedule.find((activity) => {
+      const startTime = activity?.startTime.getTime();
+      const endTime = activity?.endTime.getTime();
+
+      return startTime <= currentTime && currentTime <= endTime;
     });
 
-    currentEvent ? setCurrent(currentEvent.number) : setCurrent(0);
+    console.log(currentActivity);
 
-    currentEvent ? setTrackedEvent(true) : setTrackedEvent(false);
+    currentActivity ? setCurrent(currentActivity.number) : setCurrent(0);
+
+    currentActivity ? setTrackedEvent(true) : setTrackedEvent(false);
   };
 
   React.useEffect(() => {
@@ -968,7 +1179,7 @@ export default function Home() {
                     {schedule[current].content}
                     {trackedEvent ? (
                       <div className="text-white bg-green-500 p-1 rounded-b-lg">
-                        current event
+                        currently ongoing
                       </div>
                     ) : (
                       ""
