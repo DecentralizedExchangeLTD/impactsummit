@@ -185,8 +185,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 8, 0, 0, 0),
-      endTime: new Date(2023, 11, 5, 8, 59, 59, 0),
+      startTime: new Date(2023, 11, 9, 8, 0, 0, 0),
+      endTime: new Date(2023, 11, 9, 8, 59, 59, 0),
       number: 0,
     },
     {
@@ -241,8 +241,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 9, 0, 0, 0),
-      endTime: new Date(2023, 11, 5, 9, 14, 59, 0),
+      startTime: new Date(2023, 11, 9, 9, 0, 0, 0),
+      endTime: new Date(2023, 11, 9, 9, 14, 59, 0),
       number: 1,
     },
     {
@@ -301,8 +301,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 9, 15, 0, 0),
-      endTime: new Date(2023, 11, 5, 9, 29, 59, 0),
+      startTime: new Date(2023, 11, 9, 9, 15, 0, 0),
+      endTime: new Date(2023, 11, 9, 9, 29, 59, 0),
       number: 2,
     },
     {
@@ -363,8 +363,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 9, 30, 0, 0),
-      endTime: new Date(2023, 11, 5, 9, 59, 59, 0),
+      startTime: new Date(2023, 11, 9, 9, 30, 0, 0),
+      endTime: new Date(2023, 11, 9, 9, 59, 59, 0),
       number: 3,
     },
     {
@@ -397,8 +397,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 10, 0, 0, 0),
-      endTime: new Date(2023, 11, 5, 10, 14, 59, 0),
+      startTime: new Date(2023, 11, 9, 10, 0, 0, 0),
+      endTime: new Date(2023, 11, 9, 10, 14, 59, 0),
       number: 4,
     },
     {
@@ -462,8 +462,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 10, 15, 0, 0),
-      endTime: new Date(2023, 11, 5, 10, 44, 59, 0),
+      startTime: new Date(2023, 11, 9, 10, 15, 0, 0),
+      endTime: new Date(2023, 11, 9, 10, 44, 59, 0),
       number: 5,
     },
     {
@@ -526,8 +526,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 10, 45, 0, 0),
-      endTime: new Date(2023, 11, 5, 11, 14, 59, 0),
+      startTime: new Date(2023, 11, 9, 10, 45, 0, 0),
+      endTime: new Date(2023, 11, 9, 11, 14, 59, 0),
       number: 6,
     },
     {
@@ -586,8 +586,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 11, 15, 0, 0),
-      endTime: new Date(2023, 11, 5, 11, 44, 59, 0),
+      startTime: new Date(2023, 11, 9, 11, 15, 0, 0),
+      endTime: new Date(2023, 11, 9, 11, 44, 59, 0),
       number: 7,
     },
     {
@@ -620,8 +620,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 11, 45, 0, 0),
-      endTime: new Date(2023, 11, 5, 12, 29, 59, 0),
+      startTime: new Date(2023, 11, 9, 11, 45, 0, 0),
+      endTime: new Date(2023, 11, 9, 12, 29, 59, 0),
       number: 8,
     },
     {
@@ -684,8 +684,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 12, 45, 0, 0),
-      endTime: new Date(2023, 11, 5, 13, 14, 59, 0),
+      startTime: new Date(2023, 11, 9, 12, 45, 0, 0),
+      endTime: new Date(2023, 11, 9, 13, 14, 59, 0),
       number: 9,
     },
     {
@@ -749,8 +749,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 13, 30, 0, 0),
-      endTime: new Date(2023, 11, 5, 13, 59, 59, 0),
+      startTime: new Date(2023, 11, 9, 13, 30, 0, 0),
+      endTime: new Date(2023, 11, 9, 13, 59, 59, 0),
       number: 10,
     },
     {
@@ -813,8 +813,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 14, 0, 0, 0),
-      endTime: new Date(2023, 11, 5, 14, 29, 59, 0),
+      startTime: new Date(2023, 11, 9, 14, 0, 0, 0),
+      endTime: new Date(2023, 11, 9, 14, 29, 59, 0),
       number: 11,
     },
     {
@@ -877,8 +877,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 14, 30, 0, 0),
-      endTime: new Date(2023, 11, 5, 14, 59, 59, 0),
+      startTime: new Date(2023, 11, 9, 14, 30, 0, 0),
+      endTime: new Date(2023, 11, 9, 14, 59, 59, 0),
       number: 12,
     },
     {
@@ -915,8 +915,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 15, 15, 0, 0),
-      endTime: new Date(2023, 11, 5, 16, 44, 59, 0),
+      startTime: new Date(2023, 11, 9, 15, 15, 0, 0),
+      endTime: new Date(2023, 11, 9, 16, 44, 59, 0),
       number: 13,
     },
     {
@@ -950,8 +950,8 @@ export default function Home() {
           </Card>
         </Badge.Ribbon>
       ),
-      startTime: new Date(2023, 11, 5, 16, 45, 0, 0),
-      endTime: new Date(2023, 11, 5, 17, 0, 0, 0),
+      startTime: new Date(2023, 11, 9, 16, 45, 0, 0),
+      endTime: new Date(2023, 11, 9, 17, 0, 0, 0),
       number: 14,
     },
   ];
@@ -1537,6 +1537,26 @@ export default function Home() {
                       </div>
                     );
                   })}
+                </div>
+              </div>
+              <br />
+              <hr />
+              <br />
+              <div id="live-stream" className="w-full flex flex-col gap-2 py-4">
+                <h1 className={` text-3xl sm:text-4xl font-bold text-center`}>
+                  Live stream
+                </h1>
+                <div className="w-full aspect-video">
+                  <iframe
+                    id="ytplayer"
+                    type="text/html"
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/dfTCObc5BuE?si=Cvh8ujXKss2vwIZn"
+                    allowFullScreen
+                    frameborder="0"
+                  ></iframe>
+                  Impact summit &copy; 2023 live stream
                 </div>
               </div>
               <br />
