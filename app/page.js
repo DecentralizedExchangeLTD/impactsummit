@@ -117,15 +117,6 @@ export default function Home() {
       src: "/btcpidginfounder.jpeg",
     },
     {
-      name: "Crossvic",
-      title: "Co-founder - Pidgin Parlour",
-      socials: [
-        { platform: "twitter", url: "link" },
-        { platform: "facebook", url: "link" },
-      ],
-      src: "/crossvic.jpeg",
-    },
-    {
       name: "Princewill Ebubechukwu",
       title: "Lead - B<>rder/ess Tech Club Nekede",
       socials: [
