@@ -774,7 +774,6 @@ export default function Home() {
                 {speakers.map((speaker, index) => {
                   const speaking = [
                     "Amio Anthony",
-                    "Crossvic",
                     "Kester Ejikeme",
                   ];
                   return speaking.includes(speaker.name) ? (
