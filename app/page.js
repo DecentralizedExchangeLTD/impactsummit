@@ -772,10 +772,7 @@ export default function Home() {
               </p>{" "}
               <div className="p-2 flex flex-col sm:flex-row flex-wrap w-full h-full gap-2 items-center justify-center">
                 {speakers.map((speaker, index) => {
-                  const speaking = [
-                    "Amio Anthony",
-                    "Kester Ejikeme",
-                  ];
+                  const speaking = ["Amio Anthony", "Kester Ejikeme"];
                   return speaking.includes(speaker.name) ? (
                     <div
                       key={index}
@@ -1542,7 +1539,7 @@ export default function Home() {
                     type="text/html"
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/_sClHVYAeP8?si=l07ECS3qdD121vev"
+                    src="https://www.youtube.com/embed/QD8xBSOZuRM?si=s3pR4pYOetQvGIi0"
                     allowFullScreen
                     frameborder="0"
                   ></iframe>
